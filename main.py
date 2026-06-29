@@ -20,7 +20,9 @@ Screen height: {SCREEN_HEIGHT}''')
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-         # Draw background
+        # imput check
+        player.update(dt)
+        # Draw sprites
         screen.fill("black")
         player.draw(screen)
         # Refresh
