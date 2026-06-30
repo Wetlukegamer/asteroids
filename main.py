@@ -1,5 +1,4 @@
-import pygame
-import sys
+import pygame, sys
 from constants import *
 from logger import log_state, log_event
 from player import Player
@@ -54,7 +53,7 @@ Screen height: {SCREEN_HEIGHT}''')
                 if asteroid.colides_with(shot):
                     log_event("asteroid_shot")
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
         dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
