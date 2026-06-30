@@ -50,6 +50,11 @@ Screen height: {SCREEN_HEIGHT}''')
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if asteroid.colides_with(shot):
+                    log_event("asteroid_shot")
+                    shot.kill()
+                    asteroid.kill()
         dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
